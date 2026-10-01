@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Yatmo Map: real estate map, points of interest and neighbourhood text on property pages.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function yatmo_map_help(string $route_name, RouteMatchInterface $route_match): ?string {
+  if ($route_name !== 'help.page.yatmo_map') {
+    return NULL;
+  }
+  return '<p>' . t('Yatmo Map puts the <a href=":iframe">Yatmo map</a> (points of interest, travel times, isochrones) and the written, indexable neighbourhood text on your property pages. Enter your licence key in <a href=":settings">Configuration &gt; Web services &gt; Yatmo Map</a>, name the fields that hold the location of your content, then place the <em>Yatmo map</em> and <em>Yatmo neighbourhood text</em> blocks on the pages of that content type, or pick the Yatmo formatters on a Geofield in Manage display. Documentation: <a href=":docs">documentation.yatmo.com/plugins/drupal</a>.', [
+    ':iframe' => 'https://documentation.yatmo.com/plugins/iframe',
+    ':settings' => '/admin/config/services/yatmo-map',
+    ':docs' => 'https://documentation.yatmo.com/plugins/drupal',
+  ]) . '</p>';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function yatmo_map_theme(): array {
+  return [
+    'yatmo_map_embed' => [
+      'variables' => ['src' => '', 'height' => '560px', 'iframe_title' => '', 'attributes' => []],
+    ],
+    'yatmo_map_text' => [
+      'variables' => ['paragraphs' => [], 'heading' => 'h3', 'attributes' => []],
+    ],
+  ];
+}

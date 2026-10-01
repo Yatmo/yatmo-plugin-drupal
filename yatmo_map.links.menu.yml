@@ -1,0 +1,5 @@
+yatmo_map.settings:
+  title: 'Yatmo Map'
+  description: 'Licence key, country and defaults of the Yatmo map and neighbourhood text.'
+  parent: system.admin_config_services
+  route_name: yatmo_map.settings

@@ -1,0 +1,12 @@
+services:
+  logger.channel.yatmo_map:
+    parent: logger.channel_base
+    arguments: ['yatmo_map']
+
+  yatmo_map.client:
+    class: Drupal\yatmo_map\YatmoClient
+    arguments: ['@http_client', '@cache.default', '@config.factory', '@logger.channel.yatmo_map']
+
+  yatmo_map.renderer:
+    class: Drupal\yatmo_map\YatmoRenderer
+    arguments: ['@yatmo_map.client', '@config.factory', '@language_manager', '@current_user', '@current_route_match']

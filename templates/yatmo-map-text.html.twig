@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * The Yatmo neighbourhood text: headings and paragraphs, indexable by search engines.
+ *
+ * Available variables:
+ * - paragraphs: list of paragraphs, each with:
+ *   - title: heading text.
+ *   - sentences: the paragraph (markup, key places in <strong>), may be empty.
+ *   - items: list items (markup), may be empty.
+ * - heading: heading tag, h2 to h6.
+ * - attributes: attributes of the wrapper.
+ */
+#}
+<div{{ attributes.addClass('yatmo-text') }}>
+{% for paragraph in paragraphs %}
+  <{{ heading }}>{{ paragraph.title }}</{{ heading }}>
+  {% if paragraph.sentences %}<p>{{ paragraph.sentences }}</p>{% endif %}
+  {% if paragraph.items %}<ul>{% for item in paragraph.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+{% endfor %}
+</div>

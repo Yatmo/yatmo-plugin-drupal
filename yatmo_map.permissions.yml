@@ -1,0 +1,4 @@
+administer yatmo map:
+  title: 'Administer Yatmo Map'
+  description: 'Change the licence key and the defaults. These users also see an explanation where a map or a text cannot be shown; visitors see nothing.'
+  restrict access: true

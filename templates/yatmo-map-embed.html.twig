@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * The Yatmo map: the iframe plugin (https://documentation.yatmo.com/plugins/iframe).
+ *
+ * Available variables:
+ * - src: URL of the iframe, licence key and every option included.
+ * - height: CSS height.
+ * - iframe_title: accessible title of the iframe.
+ * - attributes: attributes of the wrapper.
+ */
+#}
+<div{{ attributes.addClass('yatmo-map-embed') }}>
+  <iframe src="{{ src }}" title="{{ iframe_title }}" loading="lazy" allow="fullscreen" style="display:block;width:100%;height:{{ height }};border:0"></iframe>
+</div>

@@ -1,0 +1,7 @@
+yatmo_map.settings:
+  path: '/admin/config/services/yatmo-map'
+  defaults:
+    _form: '\Drupal\yatmo_map\Form\SettingsForm'
+    _title: 'Yatmo Map'
+  requirements:
+    _permission: 'administer yatmo map'

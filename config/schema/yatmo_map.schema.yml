@@ -1,0 +1,170 @@
+yatmo_map.settings:
+  type: config_object
+  label: 'Yatmo Map settings'
+  mapping:
+    license_key:
+      type: string
+      label: 'Licence key (frontend)'
+    backend_key:
+      type: string
+      label: 'Backend key for server calls (optional)'
+    country:
+      type: string
+      label: 'Country'
+    language:
+      type: string
+      label: 'Language'
+    mode:
+      type: string
+      label: 'Layout'
+    map_style:
+      type: integer
+      label: 'Map style'
+    accent_color:
+      type: string
+      label: 'Accent colour'
+    marker:
+      type: string
+      label: 'Marker'
+    circle_radius:
+      type: integer
+      label: 'Circle radius in metres'
+    zoom:
+      type: integer
+      label: 'Zoom'
+    height:
+      type: string
+      label: 'Height'
+    rounded:
+      type: integer
+      label: 'Rounded corners in pixels'
+    isochrone:
+      type: string
+      label: 'Isochrones'
+    route_from:
+      type: string
+      label: 'Routes'
+    favorites:
+      type: boolean
+      label: 'Favourite addresses of logged-in users'
+    text_paragraphs:
+      type: sequence
+      label: 'Paragraphs of the text'
+      sequence:
+        type: string
+    text_heading:
+      type: string
+      label: 'Heading level of the text'
+    text_street:
+      type: boolean
+      label: 'Street in the first heading'
+    text_city:
+      type: boolean
+      label: 'City in the second heading'
+    geofield:
+      type: string
+      label: 'Geofield holding the property location'
+    latitude_field:
+      type: string
+      label: 'Latitude field'
+    longitude_field:
+      type: string
+      label: 'Longitude field'
+    address_field:
+      type: string
+      label: 'Address field'
+
+yatmo_map.block_options:
+  type: mapping
+  label: 'Yatmo options shared by the blocks and the formatters'
+  mapping:
+    source:
+      type: string
+      label: 'Location source'
+    address:
+      type: string
+      label: 'Address'
+    latitude:
+      type: string
+      label: 'Latitude'
+    longitude:
+      type: string
+      label: 'Longitude'
+    country:
+      type: string
+      label: 'Country'
+    language:
+      type: string
+      label: 'Language'
+    mode:
+      type: string
+      label: 'Layout'
+    height:
+      type: string
+      label: 'Height'
+    zoom:
+      type: string
+      label: 'Zoom'
+    map_style:
+      type: string
+      label: 'Map style'
+    accent_color:
+      type: string
+      label: 'Accent colour'
+    marker:
+      type: string
+      label: 'Marker'
+    circle_radius:
+      type: string
+      label: 'Circle radius'
+    rounded:
+      type: string
+      label: 'Rounded corners'
+    isochrone:
+      type: string
+      label: 'Isochrones'
+    route_from:
+      type: string
+      label: 'Routes'
+    paragraphs:
+      type: sequence
+      label: 'Paragraphs'
+      sequence:
+        type: string
+    heading:
+      type: string
+      label: 'Heading level'
+    street_in_title:
+      type: string
+      label: 'Street in the first heading'
+    city_in_title:
+      type: string
+      label: 'City in the second heading'
+
+block.settings.yatmo_map_map:
+  type: block_settings
+  label: 'Yatmo map block'
+  mapping:
+    yatmo:
+      type: yatmo_map.block_options
+
+block.settings.yatmo_map_text:
+  type: block_settings
+  label: 'Yatmo neighbourhood text block'
+  mapping:
+    yatmo:
+      type: yatmo_map.block_options
+
+field.formatter.settings.yatmo_map_map:
+  type: mapping
+  label: 'Yatmo map formatter'
+  mapping:
+    yatmo:
+      type: yatmo_map.block_options
+
+field.formatter.settings.yatmo_map_text:
+  type: mapping
+  label: 'Yatmo neighbourhood text formatter'
+  mapping:
+    yatmo:
+      type: yatmo_map.block_options

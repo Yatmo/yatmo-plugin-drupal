@@ -1,0 +1,21 @@
+# Local Drupal to test the yatmo_map module (see docs/drupal-plugin/DRUPAL-PLUGIN-RELEASE.md).
+#   DRUPAL_VERSION=11 docker compose up -d        -> http://localhost:8090 (admin / admin after setup.sh)
+#   docker compose exec drupal sh /yatmo-dev/setup.sh   -> installs Drupal (SQLite), drush, geofield, the module, a demo Property
+#   docker compose exec drupal sh /yatmo-dev/test.sh    -> unit tests of the module (installs drupal/core-dev the first time)
+#   docker compose down -v                        -> throws everything away
+# DRUPAL_VERSION: 11 (PHP 8.5) or 10 (PHP 8.4). One volume per version.
+name: yatmo-drupal
+services:
+  drupal:
+    image: drupal:${DRUPAL_VERSION:-11}
+    ports:
+      - "8090:80"
+    environment:
+      YATMO_KEY: ${YATMO_KEY:-}
+    volumes:
+      - drupal${DRUPAL_VERSION:-11}:/opt/drupal
+      - ../yatmo_map:/opt/drupal/web/modules/custom/yatmo_map
+      - .:/yatmo-dev
+volumes:
+  drupal11:
+  drupal10:

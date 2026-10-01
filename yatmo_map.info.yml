@@ -1,0 +1,7 @@
+name: Yatmo Map
+type: module
+description: 'Real estate map, points of interest with travel times and an indexable neighbourhood text on property pages, from Yatmo. Blocks, field formatters and a settings page.'
+package: Yatmo
+core_version_requirement: ^10.3 || ^11
+configure: yatmo_map.settings
+php: 8.1

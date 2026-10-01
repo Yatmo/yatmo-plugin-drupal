@@ -1,0 +1,29 @@
+license_key: ''
+backend_key: ''
+country: BE
+language: auto
+mode: overlay
+map_style: 1
+accent_color: '#428BFF'
+marker: pin
+circle_radius: 500
+zoom: 15
+height: '560'
+rounded: 0
+isochrone: ''
+route_from: ''
+favorites: false
+text_paragraphs:
+  - education
+  - shopping
+  - publictransports
+  - transports
+  - tourism
+  - cities
+text_heading: h3
+text_street: true
+text_city: true
+geofield: ''
+latitude_field: ''
+longitude_field: ''
+address_field: ''
