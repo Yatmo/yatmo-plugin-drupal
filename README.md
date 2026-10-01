@@ -15,7 +15,7 @@ Drupal 10.3 and 11.
 ## Install in 5 minutes
 
 1. Get a licence key at [yatmo.com](https://yatmo.com) ([keys explained](https://documentation.yatmo.com/license)).
-2. `composer require drupal/yatmo_map` then enable **Yatmo Map** (`drush en yatmo_map`).
+2. `composer require drupal/yatmo_map` ([drupal.org/project/yatmo_map](https://www.drupal.org/project/yatmo_map)) then enable **Yatmo Map** (`drush en yatmo_map`).
 3. **Configuration > Web services > Yatmo Map**: enter the key, the country of your properties, and the
    fields that hold the location of your content (a Geofield, or a latitude and a longitude field, or an
    address field that Yatmo geocodes). Optionally change the map and text defaults.
